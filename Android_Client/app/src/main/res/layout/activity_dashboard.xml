@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DashboardActivity"
+    android:background="@drawable/bg">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="27dp"
+        android:backgroundTint="#AAFFFFFF"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/saldoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saldo" />
+
+            <TextView
+                android:id="@+id/nominalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/saldoTextView"
+                android:text="Rp. 0"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@id/materialCardView"
+        app:cardCornerRadius="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+        app:layout_constraintVertical_bias="0.1"
+        android:layout_margin="27dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:layout_margin="10dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mutasiCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="100dp"
+                android:layout_marginRight="20dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+                    <ImageView
+                        android:id="@+id/mutasiIcon"
+                        android:layout_margin="10dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_presentation"/>
+                    <TextView
+                        android:layout_below="@+id/mutasiIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mutasi Rekening"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/virtualAccountCardView"
+                android:layout_toRightOf="@id/mutasiCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="100dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+                    <ImageView
+                        android:id="@+id/topupIcon"
+                        android:layout_margin="10dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_credit_card"/>
+                    <TextView
+                        android:layout_below="@+id/topupIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Top Up E-Wallet"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Logout"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MutasiActivity"
+    android:background="@drawable/bg">
+
+    <LinearLayout
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="7dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:padding="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/startButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:text="Pilih" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/startButton">
+
+                    <TextView
+                        android:id="@+id/startTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Tanggal Awal"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp">
+
+                <Button
+                    android:id="@+id/endButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:text="Pilih" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/endButton">
+
+                    <TextView
+                        android:id="@+id/endTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Tanggal Akhir"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/muatButton"
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2"
+            tools:layout_editor_absoluteX="27dp"
+            android:text="Muat Mutasi"
+            android:paddingTop="10dp"
+            android:textSize="20sp"
+            android:paddingBottom="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            app:layout_constraintTop_toBottomOf="@+id/muatButton"
+            tools:layout_editor_absoluteX="27dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="Mutasi Rekening"
+                    android:textAlignment="center" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                    tools:layout_editor_absoluteX="27dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mutasiRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                        tools:listitem="@layout/list_mutasi"/>
+                </ScrollView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
